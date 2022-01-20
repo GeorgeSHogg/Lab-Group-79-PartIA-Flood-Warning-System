@@ -31,9 +31,7 @@ def distance(p1, p2):
     theta = archav(hav_theta)
     return theta * radius
 
-def distance_key(station, p):
-    return distance(station.coords, p)
-
 def stations_by_distance(stations, p):
     """Finds the distance of all stations to a specified point and returns them as an ordered list sorted by ascending distance"""
-    return sorted(stations, key = lambda station: distance(station.coord, p))
+    stations = [(station, distance(station.coord, p)) for station in stations]
+    return sorted(stations, key = lambda station: station[1])
