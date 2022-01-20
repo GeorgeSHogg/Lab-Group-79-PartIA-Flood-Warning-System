@@ -37,6 +37,8 @@ def stations_by_distance(stations, p):
     return sorted(stations, key = lambda station: station[1])
 
 def stations_within_radius(stations, centre, r):
-    stations_distance = [distance(station.coord, centre) for station in stations]
-    within_r = np.where(stations_by_distance <= r)
-    return(stations[within_r])
+    station_list = []
+    for station in stations:
+        if distance(station.coord, centre) < r:
+            station_list.append(station)
+    return station_list
