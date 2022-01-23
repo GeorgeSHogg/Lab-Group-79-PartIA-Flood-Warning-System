@@ -8,4 +8,4 @@ def test_radius():
     stations = build_station_list()
     stations = stations_within_radius(stations, p, r)
     for station in stations:
-        assert distance(station.coords, p) <= r
+        assert distance(station.coord, p) <= r
