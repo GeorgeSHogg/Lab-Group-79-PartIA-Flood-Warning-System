@@ -16,6 +16,3 @@ def test_distance_sorter():
     for station in sorted_stations:
         assert station[1] >= prev_distance
         prev_distance = station[1]
-
-test_distance()
-test_distance_sorter()
