@@ -6,8 +6,6 @@ import numpy as np
 def test_distance():
     d1 = distance((0, 180), (0, 0))
     d2 = np.pi * 6371
-    print(d1)
-    print(d2)
     assert np.isclose(d1, d2)
 
 def test_distance_sorter():
