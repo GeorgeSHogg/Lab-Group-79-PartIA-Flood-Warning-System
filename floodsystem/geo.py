@@ -42,3 +42,25 @@ def stations_within_radius(stations, centre, r):
         if distance(station.coord, centre) < r:
             station_list.append(station)
     return station_list
+
+def rivers_with_station(stations):
+    #List of how many rivers have at least one monitoring station
+    rivers = set()
+    for station in stations:
+        rivers.add(station.river)
+    return rivers
+
+def stations_by_river(stations, river):
+    names = []
+    for station in stations:
+        if station.river == river:
+            names.append(station.name)
+    names = sorted(names)
+    return names
+        
+def rivers_by_station_number(stations, N):
+    river = []
+    river = river.append(river.name)
+    station = stations_by_river
+    
+    return river, len(station)
