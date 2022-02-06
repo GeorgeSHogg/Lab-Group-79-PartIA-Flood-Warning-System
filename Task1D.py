@@ -3,6 +3,7 @@ from floodsystem.stationdata import build_station_list
 """Requirements for Task 1D"""
 stations = build_station_list()
 rivers = rivers_with_station(stations)
+s = stations_by_river
 
 #First 10 rivers sorted
 rivers = sorted(rivers)
@@ -13,7 +14,7 @@ print(len(rivers))
 #First 10 - , rivers_with_station(stations))
 print(r)
 
-s = stations_by_river
+#Stations on rivers Aire, Cam & Thames
 print("Stations on River Aire:", s(stations, "River Aire"))
 print("Stations on River Cam:", s(stations, "River Cam"))
 print("Stations on River Thames:", s(stations, "River Thames"))
