@@ -73,7 +73,7 @@ def rivers_by_station_number(stations, N):
 
 def rivers_by_station_number_dict(stations, N):
     river_dict = {}
-    for i in stations:
+    for station in stations:
         if station.river in river_dict.keys:
             river_dict[station.river] += 1
         else:
