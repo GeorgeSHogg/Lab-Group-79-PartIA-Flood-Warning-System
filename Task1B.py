@@ -20,5 +20,5 @@ def run():
     print([breakdown(station) for station in sorted_stations[-10:]])
 
 if __name__ == "__main__":
-    print("Task 1B")
+    print("*** Task 1B: CUED Part IA Flood Warning System ***")
     run()
