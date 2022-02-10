@@ -6,9 +6,10 @@ geographical data.
 
 """
 
-from .utils import sorted_by_key  # noqa
+# from utils import sorted_by_key 
 from os import stat
 import numpy as np
+import operator
 
 
 def hav(theta):
@@ -61,21 +62,32 @@ def stations_by_river(stations, river):
 def rivers_by_station_number(stations, N):
     """Take a list of stations and return the N rivers with the most stations upon
     them, in the form of a list of tuples in descending order"""
-    rivers_with_number = []
+    
+    riverdic = {}
+    riverdic_N = []
 
-    for r in rivers_with_number:
-        rivers_with_number.append(rivers_with_station(stations), len(stations_by_river(stations)))
-
-        if r in stations_by_river(stations) == rivers_with_station:
-            rivers_with_number.append(r)
-    rivers_with_number.sort 
-    return rivers_by_station_number
-
-def rivers_by_station_number_dict(stations, N):
-    river_dict = {}
+    # Adds unique rivers to riverdic and assigns value for number of stations on river
     for station in stations:
-        if station.river in river_dict.keys:
-            river_dict[station.river] += 1
+        if station.river not in riverdic:
+            riverdic[station.river] = 1
         else:
-            river_dict[station.river] += 1
-    return river_dict
+            riverdic[station.river] += 1
+
+    # Creates ordered tuple list from dictionary. Descending by station frequency.
+    sorted_riverdic = sorted(riverdic.items(), key=operator.itemgetter(1), reverse = True)
+    
+    # Creates list of stations with 'N' highest unique station frequency values
+    n = 0
+    i = 0
+    while n < N:
+        if sorted_riverdic[i][1] == sorted_riverdic[i+1][1]:
+            riverdic_N.append(sorted_riverdic[i])
+            i +=1
+        else:
+            riverdic_N.append(sorted_riverdic[i])
+            n += 1; i += 1
+    
+    print(len(riverdic_N), " stations returned"); 
+    print(riverdic_N)
+    
+    return riverdic_N
