@@ -14,7 +14,7 @@ def test_rivers_with_stations():
     assert r == ['Addlestone Bourne', 'Aire Washlands', 'Alconbury Brook', 'Aldingbourne Rife', 'Aller Brook', 'Allison Dyke', 'Alverthorpe Beck', 'Ampney Brook', 'Amwell Loop', 'Arkle Beck']
 
 def test_stations_by_rivers():
-    stations = build_station_list
+    stations = build_station_list()
     s = stations_by_river(stations, "River Cam")
  #Test for stations on River Cam
     assert s == ['Cam', 'Cambridge', 'Cambridge Baits Bite', 'Cambridge Jesus Lock', 'Dernford', 'Great Chesterford', 'Weston Bampfylde']
