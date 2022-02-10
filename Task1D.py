@@ -11,7 +11,7 @@ def run():
     rivers = sorted(rivers)
     r = rivers[:10]
 
-    #Print No. of stations with at least one monitoring station
+    #Print No. of rivers with at least one monitoring station
     print(len(rivers))
     #First 10 - , rivers_with_station(stations))
     print(r)
