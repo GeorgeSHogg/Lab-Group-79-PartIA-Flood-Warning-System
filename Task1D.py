@@ -20,5 +20,8 @@ def run():
     print("Stations on River Aire:", s(stations, "River Aire"))
     print("Stations on River Cam:", s(stations, "River Cam"))
     print("Stations on River Thames:", s(stations, "River Thames"))
-run()
+
+if __name__ == "__main__":
+    print("*** Task 1D: CUED Part IA Flood Warning System ***")
+    run()
 
