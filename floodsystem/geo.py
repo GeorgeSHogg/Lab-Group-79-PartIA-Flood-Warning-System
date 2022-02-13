@@ -70,7 +70,7 @@ def rivers_by_station_number(stations, N):
         List_for_stations.append((river, len(stations)))
 
     List_for_stations.sort(key = lambda x: x[1])
-    limit = List_for_stations[9][0]
+    limit = List_for_stations[9][1]
     return_list = []
 
     for station in List_for_stations:
