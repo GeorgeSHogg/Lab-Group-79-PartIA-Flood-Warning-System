@@ -74,6 +74,7 @@ def rivers_by_station_number(stations, N):
     return_list = []
 
     for station in List_for_stations:
-        if station[1] >= limit:
+        _, num_rivers = station
+        if num_rivers >= limit:
             return_list.append(station)
     return return_list
