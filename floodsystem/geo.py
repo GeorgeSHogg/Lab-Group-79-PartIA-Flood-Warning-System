@@ -69,7 +69,11 @@ def rivers_by_station_number(stations, N):
     for river in Stations_with_river:
         List_for_stations.append((river, len(stations)))
 
-    while List_for_stations[N-1][1] == List_for_stations[N-1][1]:
-        N += 1
+    List_for_stations.sort(key = lambda x: x[1])
+    limit = List_for_stations[9][0]
+    return_list = []
 
-    return sorted_by_key(List_for_stations, 1, True)[:N]
+    for station in List_for_stations:
+        if station[1] >= limit:
+            return_list.append(station)
+    return return_list
