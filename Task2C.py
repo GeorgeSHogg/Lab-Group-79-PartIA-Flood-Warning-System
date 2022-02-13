@@ -1,4 +1,4 @@
-from floodsystem.flood import stations_level_over_threshold
+from floodsystem.flood import most_at_risk_stations, stations_level_over_threshold
 from floodsystem.stationdata import build_station_list, update_water_levels
 
 def breakdown(station):
@@ -9,8 +9,8 @@ def run():
     "Requirements for Task 2B"
     stations = build_station_list()
     update_water_levels(stations)
-    N = 3
-    at_risk = stations_level_over_threshold(stations, N)
+    N = 10
+    at_risk = most_at_risk_stations(stations, N)
     sorted_at_risk = [breakdown(station) for station in at_risk]
     print(*sorted_at_risk, sep = "\n")
 
