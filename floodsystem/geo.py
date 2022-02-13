@@ -77,15 +77,13 @@ def rivers_by_station_number(stations, N):
     sorted_riverdic = sorted(riverdic.items(), key=operator.itemgetter(1), reverse = True)
     
     # Creates list of stations with 'N' highest unique station frequency values
+    lim = sorted_riverdic[N-1][1]
+    print("Limit", lim)
     n = 0
     i = 0
-    while n < N:
-        if sorted_riverdic[i][1] == sorted_riverdic[i+1][1]:
-            riverdic_N.append(sorted_riverdic[i])
-            i +=1
-        else:
-            riverdic_N.append(sorted_riverdic[i])
-            n += 1; i += 1
+    for river in sorted_riverdic:
+        if lim <= river[1]:
+            riverdic_N.append(river)
     
     print(len(riverdic_N), " stations returned"); 
     print(riverdic_N)
