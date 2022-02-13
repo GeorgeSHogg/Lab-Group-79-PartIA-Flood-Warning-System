@@ -8,7 +8,7 @@ def run():
     stations = build_station_list()
     N = 9
     most_stations = rivers_by_station_number(stations, N)
-    print(len(most_stations), " Stations found")
+    print(len(most_stations), "Stations found")
     print(most_stations)
 
 if __name__ == "__main__":
