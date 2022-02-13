@@ -63,9 +63,8 @@ def stations_by_river(stations, river):
 def rivers_by_station_number(stations, N):
     """Take a list of stations and return the N rivers with the most stations upon
     them, in the form of a list of tuples in descending order"""
-    Stations_with_river = stations_by_river(stations)
-    
-    i = 0
+    Stations_with_river = rivers_with_station(stations)
+  
     List_for_stations = []
     for river in Stations_with_river:
         List_for_stations.append((river, len(stations)))
