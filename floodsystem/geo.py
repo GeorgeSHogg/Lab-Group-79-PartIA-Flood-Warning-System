@@ -65,6 +65,7 @@ def rivers_by_station_number(stations, N):
     them, in the form of a list of tuples in descending order"""
     Stations_with_river = stations_by_river(stations)
     
+    i = 0
     List_for_stations = []
     for river in Stations_with_river:
         List_for_stations.append((river, len(stations)))
