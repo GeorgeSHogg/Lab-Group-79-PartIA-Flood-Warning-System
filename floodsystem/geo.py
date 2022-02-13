@@ -8,9 +8,10 @@ geographical data.
 
 # from utils import sorted_by_key 
 from os import stat
+from typing import List
 import numpy as np
 import operator
-
+from .utils import sorted_by_key
 
 def hav(theta):
     """Finds the haversine of an angle"""
@@ -62,32 +63,13 @@ def stations_by_river(stations, river):
 def rivers_by_station_number(stations, N):
     """Take a list of stations and return the N rivers with the most stations upon
     them, in the form of a list of tuples in descending order"""
+    Stations_with_river = stations_by_river(stations)
     
-    riverdic = {}
-    riverdic_N = []
+    List_for_stations = []
+    for river in Stations_with_river:
+        List_for_stations.append((river, len(stations)))
 
-    # Adds unique rivers to riverdic and assigns value for number of stations on river
-    for station in stations:
-        if station.river not in riverdic:
-            riverdic[station.river] = 1
-        else:
-            riverdic[station.river] += 1
+    while List_for_stations[N-1][1] == List_for_stations[N-1][1]:
+        N += 1
 
-    # Creates ordered tuple list from dictionary. Descending by station frequency.
-    sorted_riverdic = sorted(riverdic.items(), key=operator.itemgetter(1), reverse = True)
-    
-    # Creates list of stations with 'N' highest unique station frequency values
-    n = 0
-    i = 0
-    while n < N:
-        if sorted_riverdic[i][1] == sorted_riverdic[i+1][1]:
-            riverdic_N.append(sorted_riverdic[i])
-            i +=1
-        else:
-            riverdic_N.append(sorted_riverdic[i])
-            n += 1; i += 1
-    
-    print(len(riverdic_N), " stations returned"); 
-    print(riverdic_N)
-    
-    return riverdic_N
+    return sorted_by_key(List_for_stations, 1, True)[:N]
