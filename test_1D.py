@@ -9,7 +9,7 @@ def test_rivers_with_stations():
     rivers = sorted(rivers)
     r = rivers[:10]
 #Test for No. of stations with at least one monitoring station
-    assert len(rivers) == 950
+    assert len(rivers) >= 950
 # Test for first 10 rivers
     assert r == ['Addlestone Bourne', 'Aire Washlands', 'Alconbury Brook', 'Aldingbourne Rife', 'Aller Brook', 'Allison Dyke', 'Alverthorpe Beck', 'Ampney Brook', 'Amwell Loop', 'Arkle Beck']
 
