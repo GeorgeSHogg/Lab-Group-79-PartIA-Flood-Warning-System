@@ -15,5 +15,5 @@ def run():
     print(*sorted_at_risk, sep = "\n")
 
 if __name__ == "__main__":
-    print("*** Task 2B: CUED Part IA Flood Warning System ***")
+    print("*** Task 2C: CUED Part IA Flood Warning System ***")
     run()
