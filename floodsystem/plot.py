@@ -50,6 +50,6 @@ def plot_water_level_with_fit(station, dates, levels, p):
 #Added titles and labelled axes onto plots
     plt.xlabel('date')
     plt.ylabel('water level (m)')
-    plt.xticks(rotation = 45)
+    plt.xticks(rotation=);
     plt.title(station.name)
     plt.show()

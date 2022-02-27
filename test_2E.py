@@ -11,9 +11,9 @@ def test_graphs():
 # Add axis labels, rotate date labels and add plot title
     plt.xlabel('date')
     plt.ylabel('water level (m)')
-    plt.xticks(rotation = 45)
+    plt.xticks(rotation = 45);
     plt.title(name)
     plt.show()
     plt.tight_layout()
-
+    
     assert plt.plot.called
