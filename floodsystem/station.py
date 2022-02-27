@@ -38,21 +38,6 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
-    
-    def get_stationName(self):
-        return self.name
-    def get_stationID(self):
-        return self.station_id
-    def get_measureID(self):
-        return self.measure_id
-    def get_coord(self):
-        return self.coord
-    def get_town(self):
-        return self.town
-    def get_river(self):
-        return self.river
-    def get_typical_range(self):
-        return self.typical_range
 
     def typical_range_consistent(self):
         if self.typical_range == None:

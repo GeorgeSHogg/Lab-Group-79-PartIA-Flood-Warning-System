@@ -7,11 +7,8 @@ from floodsystem.analysis import polyfit
 
 def plot_water_levels(station, dates, levels):
 
-    station = build_station_list()
-    dates = []
-    levels = []
-    low = station.typical_range[0]
-    high = station.typical_range[1]
+
+    low, high = station.typical_range
 
 #Plot with axes
     plt.plot(dates, levels)
