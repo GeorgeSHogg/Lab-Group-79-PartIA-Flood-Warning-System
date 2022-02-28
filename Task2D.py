@@ -38,10 +38,12 @@ def run():
     #     return
 
     # Fetch data over past 2 days
+
     dt = 2
     dates, levels = fetch_measure_levels(
         station_cam.measure_id, dt=datetime.timedelta(days=dt))
 
+    print(station_cam.measure_id)
     print(len(dates))
     # Print level history
     for date, level in zip(dates, levels):
