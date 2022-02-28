@@ -12,7 +12,7 @@ def run():
     stations = build_station_list()
     update_water_levels(stations)
     stations_used = []
-    highest_level_stations = most_at_risk_stations(stations, 10)
+    highest_level_stations = most_at_risk_stations(stations, 5)
 
     station_list = []
     dates_list = []
@@ -32,7 +32,7 @@ def run():
             dates_list.append(dates)
             levels_list.append(levels)
 
-    plot_water_levels(station_list[:5], dates_list[:5], levels_list[:5], False)
+    plot_water_levels(station_list, dates_list, levels_list, False)
 
 if __name__ == "__main__":
     print("***Task 2E: CUED Part 1A Flood Warning System***")
