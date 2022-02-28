@@ -125,6 +125,7 @@ def fetch_measure_levels(measure_id, dt):
     url = url_base + url_options
 
     # Fetch data
+    print(url)
     data = fetch(url)
 
     # Extract dates and levels
