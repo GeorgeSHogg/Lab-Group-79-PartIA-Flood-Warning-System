@@ -9,7 +9,7 @@ def polyfit(dates, levels, p):
     x = matplotlib.dates.date2num(dates)
     y = levels
     
-#shift x values
+    #shift x values
     p_coeff = np.polyfit(x-x[0],y,p) 
     poly = np.poly1d(p_coeff)
     d0 = matplotlib.dates.date2num(dates[0])
