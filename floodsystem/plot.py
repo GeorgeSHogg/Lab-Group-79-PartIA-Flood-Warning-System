@@ -5,29 +5,19 @@ import numpy as np
 
 def plot_water_levels(station, dates, levels):
 
-<<<<<<< HEAD
-    station = build_station_list()
-    dates = []
-    levels = []
-    low = station.get_typical_range()[0]
-    high = station.get_typical_range()[1]
-=======
-
     low, high = station.typical_range
->>>>>>> parent of 562bd8d (Revert "Changes")
 
 #Plot with axes
     plt.plot(dates, levels)
-    plt.plot(dates, low)
-    plt.plot(dates, high)
+    plt.axhline(y = low, color = "g")
+    plt.axhline(y = high, color = "r")
 
 #Added titles and labelled axes onto plots
     plt.xlabel("Time for a station (days)")
     plt.ylabel("Water Level (m)")
     plt.title(station)
     plt.xticks(rotation = 90)
-    plt.title("Station: " + station.get_stationName())
-
+    plt.title("Station: " + station.name)
 #Display plot
     plt.tight_layout()
     plt.show()

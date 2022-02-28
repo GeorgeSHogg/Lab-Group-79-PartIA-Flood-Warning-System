@@ -18,16 +18,13 @@ def run():
         stations_used.append(station[0])
 
     for station in stations_used:
-        print(station.measure_id)
-        print(station)
         dates, levels = fetch_measure_levels(station.measure_id, datetime.timedelta(days=10))
-        print(dates)
-        dates = np.array(dates)
-        levels = np.array(levels)
-        print(dates.shape)
-        print(levels.shape)
-        plot_water_levels(station,dates,levels)
-        plt.show()
+        if len(dates) > 3:
+            dates = np.array(dates)
+            levels = np.array(levels)
+            print(dates.shape)
+            print(levels.shape)
+            plot_water_levels(station,dates,levels)
 
 if __name__ == "__main__":
     print("***Task 2E: CUED Part 1A Flood Warning System")
