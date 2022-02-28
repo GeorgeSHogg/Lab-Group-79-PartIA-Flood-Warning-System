@@ -39,13 +39,16 @@ def run():
 
     # Fetch data over past 2 days
 
-    dt = 6
+    dt = 3
     dates, levels = fetch_measure_levels(
         station_cam.measure_id, dt=datetime.timedelta(days=dt))
 
     # Print level history
-    for date, level in zip(dates, levels):
-        print(date, level)
+    if len(dates) > 0:
+        for date, level in zip(dates, levels):
+            print(date, level)
+    else:
+        print("Station Cam has not been updated in", dt, "days")
 
 
 if __name__ == "__main__":
