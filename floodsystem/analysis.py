@@ -5,17 +5,7 @@ from datetime import datetime
 from floodsystem.stationdata import update_water_levels
 
 def polyfit(dates, levels, p):
- 
-    dates = []
- 
-    levels = []
- 
-    p = []
-
-<<<<<<< HEAD
-
-    return polyfit()
-=======
+    
     x = matplotlib.dates.date2num(dates)
     y = levels
     
@@ -25,4 +15,3 @@ def polyfit(dates, levels, p):
     d0 = matplotlib.dates.date2num(dates[0])
 
     return poly, d0
->>>>>>> parent of 562bd8d (Revert "Changes")
