@@ -29,30 +29,34 @@ def run():
     min_data_threshold = 5
     min_severe = 1.75
     min_high = 1.25
-    
+
     at_severe_risk = []
     at_high_risk = []
+
+    at_risk_rivers = []
+    shortlist = []
+    radius = 20
+
     for station in at_risk:
         dates, levels = fetch_measure_levels(station.measure_id, dt=timedelta(days = 2))
         if len(dates) > min_data_threshold:    
             predicted = predict_max(station, dates, levels, order, future_days)
             if predicted > min_severe:
                 at_severe_risk.append(station)
+                if station.river not in at_risk_rivers:
+                    at_risk_rivers.append(station.rivers)
+                for nearby_station in stations_within_radius(stations, station.coord, radius):
+                    shortlist.append(nearby_station)
             elif predicted > min_high:
                 at_high_risk.append(station)
+
 
     print("Stations at severe risk")
     print(*[station.name for station in at_severe_risk], sep = ", ")
     
-    at_risk_rivers = []
-    shortlist = []
-    radius = 20
-
+    
     for station in at_severe_risk:
-        if station.town not in severe_towns:
-            severe_towns.append(station.town)
-        for nearby_station in stations_within_radius(stations, station.coord, radius):
-            shortlist.append(nearby_station)
+        
         
   
     print(*shortlist, sep = ", ")
