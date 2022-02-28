@@ -35,5 +35,5 @@ def run():
     plot_water_levels(station_list[:5], dates_list[:5], levels_list[:5], False)
 
 if __name__ == "__main__":
-    print("***Task 2E: CUED Part 1A Flood Warning System")
+    print("***Task 2E: CUED Part 1A Flood Warning System***")
     run()
