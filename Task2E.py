@@ -14,6 +14,10 @@ def run():
     stations_used = []
     highest_level_stations = most_at_risk_stations(stations, 10)
 
+    station_list = []
+    dates_list = []
+    levels_list = []
+
     for station in highest_level_stations:
         stations_used.append(station[0])
 
@@ -24,7 +28,13 @@ def run():
             levels = np.array(levels)
             print(dates.shape)
             print(levels.shape)
-            plot_water_levels(station,dates,levels)
+            plot_water_levels([station], [dates] , [levels])
+
+            station_list.append(station)
+            dates_list.append(dates)
+            levels_list.append(levels)
+
+    plot_water_levels(station_list[:5], dates_list[:5], levels_list[:5], False)
 
 if __name__ == "__main__":
     print("***Task 2E: CUED Part 1A Flood Warning System")
