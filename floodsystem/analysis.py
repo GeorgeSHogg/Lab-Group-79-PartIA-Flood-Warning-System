@@ -15,3 +15,11 @@ def polyfit(dates, levels, p):
     d0 = matplotlib.dates.date2num(dates[0])
 
     return poly, d0
+
+def predict_max(station, dates, levels, order, future_days):
+    low, high = station.typical_range
+    poly, d0 = polyfit(dates, levels, order)
+    predicted = max(poly(np.arange(0, future_days, 10)))
+    predicted_relative = (predicted - low) / (high - low)
+    print(predicted_relative)
+    return predicted_relative
