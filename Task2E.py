@@ -26,8 +26,6 @@ def run():
         if len(dates) > 3:
             dates = np.array(dates)
             levels = np.array(levels)
-            print(dates.shape)
-            print(levels.shape)
             plot_water_levels([station], [dates] , [levels])
 
             station_list.append(station)
