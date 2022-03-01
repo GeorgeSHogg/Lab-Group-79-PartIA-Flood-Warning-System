@@ -27,10 +27,10 @@ def run():
     at_risk = [breakdown(station) for station in at_risk]
 
     order = 4
-    future_days = 5
+    future_days = 7
     min_data_threshold = 5
-    min_severe = 1.75
-    min_high = 1.25
+    min_severe = 1.7
+    min_high = 1.2
 
     at_high_risk = []
     at_risk_rivers = []
@@ -77,17 +77,15 @@ def run():
             low_towns.append(station.town)
             appended_towns.append(station.town)
   
-    print()
-    print(*severe_towns, sep = ", ")
-    print()
-    print(*high_towns, sep = ", ")
-    print()
-    print(*moderate_towns, sep = ", ")
-    print()
-    print(*low_towns, sep = ", ")
-    print()
-
-
+    warnings = ["Severe", "High", "Moderate", "Low"]
+    towns = [severe_towns, high_towns, moderate_towns, low_towns]
+    
+    for i in range(len(warnings)):
+        print()
+        print(warnings[i], "risk towns")
+        print(*sorted(towns), sep = ", ")
+        print()
+    
 if __name__ == "__main__":
     print("*** Task 2G: CUED Part IA Flood Warning System ***")
     run()
