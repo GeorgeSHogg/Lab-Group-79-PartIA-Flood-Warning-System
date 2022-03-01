@@ -60,6 +60,13 @@ def stations_by_river(stations, river):
     names = sorted(names)
     return names
 
+def stations_by_river_return_station(stations, river):
+    names = []
+    for station in stations:
+        if station.river == river:
+            names.append(station)
+    return names
+
 def rivers_by_station_number(stations, N):
     """Take a list of stations and return the N rivers with the most stations upon
     them, in the form of a list of tuples in descending order"""
