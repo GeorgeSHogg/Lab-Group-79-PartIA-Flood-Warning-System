@@ -73,7 +73,7 @@ def run():
 
 
     for station in stations:
-        if station not in appended_towns and station.town is not None:
+        if station.town not in appended_towns and station.town is not None:
             low_towns.append(station.town)
             appended_towns.append(station.town)
   
