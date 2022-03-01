@@ -46,14 +46,14 @@ def run():
                     at_risk_rivers.append(station.river)
                 for nearby_station in stations_within_radius(stations, station.coord, radius):
                     shortlist.append(nearby_station)
-                if station.town not in severe_towns:
+                if station.town not in severe_towns and station.town is not None:
                     severe_towns.append(station.town)
                     appended_towns.append(station.town)
             elif predicted > min_high:
                 at_high_risk.append(station)
     
     for station in at_high_risk:
-        if station.town not in appended_towns:
+        if station.town not in appended_towns and station.town is not None:
             high_towns.append(station.town)
             appended_towns.append(station.town)
 
@@ -62,18 +62,18 @@ def run():
             if station not in shortlist:
                 shortlist.append(station)
             else:
-                if station.town not in appended_towns:
+                if station.town not in appended_towns and station.town is not None:
                     high_towns.append(station.town)
                     appended_towns.append(station.town)
 
     for station in shortlist:
-        if station.town not in appended_towns:
+        if station.town not in appended_towns and station.town is not None:
             moderate_towns.append(station.town)
             appended_towns.append(station.town)
 
 
     for station in stations:
-        if station not in appended_towns:
+        if station not in appended_towns and station.town is not None:
             low_towns.append(station.town)
             appended_towns.append(station.town)
   
