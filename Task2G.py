@@ -26,7 +26,7 @@ def run():
     at_risk = stations_level_over_threshold(stations, tol)
     at_risk = [breakdown(station) for station in at_risk]
 
-    order = 3
+    order = 4
     future_days = 5
     min_data_threshold = 5
     min_severe = 1.75
