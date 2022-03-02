@@ -4,9 +4,12 @@ import matplotlib.pyplot as plt
 from datetime import datetime 
 from floodsystem.stationdata import update_water_levels
 
-def polyfit(dates, levels, p):
+def polyfit(dates, levels, p, x_dates = True):
     
-    x = matplotlib.dates.date2num(dates)
+    if x_dates:
+        x = matplotlib.dates.date2num(dates)
+    else: 
+        x = dates
     y = levels
     
     #shift x values

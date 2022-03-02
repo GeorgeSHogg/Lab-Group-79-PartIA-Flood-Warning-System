@@ -6,6 +6,9 @@ from floodsystem.stationdata import build_station_list
 import numpy as np
 
 def plot_water_levels(station_list, dates_list, levels_list, plot_typical = True):
+    
+    if len(dates_list) == 0 or len(levels_list) == 0:
+        return 'The test_station has empty levels or dates list'
 
     title = ""
 
@@ -32,6 +35,10 @@ def plot_water_levels(station_list, dates_list, levels_list, plot_typical = True
     plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
+    
+    if len(dates) == 0 or len(levels) == 0:
+        return 'The test_station has empty levels or dates list'
+
     poly, d0 = polyfit(dates,levels,p)
     
     #Plot with axes

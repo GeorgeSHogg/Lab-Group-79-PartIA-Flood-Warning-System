@@ -10,5 +10,5 @@ def test_tol_and_order():
     prev_value = np.inf
     for station in at_risk:
         _, cur_value = station 
-        assert prev_value > cur_value
-        assert cur_value > tol
+        assert prev_value >= cur_value
+        assert cur_value >= tol

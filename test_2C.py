@@ -11,4 +11,4 @@ def test_tol_and_order():
     assert len(at_risk) == N
     for station in at_risk:
         _, cur_value = station 
-        assert prev_value > cur_value
+        assert prev_value >= cur_value
