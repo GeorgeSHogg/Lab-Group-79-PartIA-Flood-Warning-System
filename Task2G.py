@@ -99,8 +99,8 @@ def run():
     for i in range(len(warnings)):
         print()
         print(warnings[i], "risk towns")
-        print(*sorted(towns), sep = ", ")
-        print()
+        print(*sorted(towns[i]), sep = ", ")
+
     
 if __name__ == "__main__":
     print("*** Task 2G: CUED Part IA Flood Warning System ***")
